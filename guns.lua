@@ -1,7 +1,7 @@
 
 -- This code is used from Christian9's Gun mod
 
-arrows = {
+bullet = {
 	{"halftest:bullet", "halftest:gun_bullet_entity"},
 }
 
@@ -12,7 +12,7 @@ local halftest_shoot_bullet = function(itemstack, player)
 				player:get_inventory():remove_item("main", arrow[1])
 			end
 			local playerpos = player:getpos()
-			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, arrow[2])
+			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[2])
 			local dir = player:get_look_dir()
 			obj:setvelocity({x=dir.x*19, y=dir.y*19, z=dir.z*19})
 			obj:setacceleration({x=dir.x, y=dir.y, z=dir.z})
@@ -29,14 +29,14 @@ end
 
 local halftest_shoot_bullets = function(itemstack, player)
 	for _,arrow in ipairs(arrows) do
-		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == arrow[1] then
+		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[1] then
 			if not minetest.setting_getbool("creative_mode") then
 				player:get_inventory():remove_item("main", arrow[1])
 			end
 			local playerpos = player:getpos()
-			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, arrow[2])
-			local obj1 = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, arrow[2])
-			local obj2 = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, arrow[2])
+			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[2])
+			local obj1 = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bulet[2])
+			local obj2 = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[2])
 			local dir = player:get_look_dir()
 			obj:setvelocity({x=dir.x*19, y=dir.y*19, z=dir.z*19})
 			obj:setacceleration({x=dir.x, y=dir.y, z=dir.z})
