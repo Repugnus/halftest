@@ -1,6 +1,3 @@
-
--- This code is used from Christian9's Gun mod
-
 minetest.register_craftitem("halftest:bullet", {
 	description = "Bullet",
 	inventory_image = "halftest_gun_bullet.png",

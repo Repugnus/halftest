@@ -1,6 +1,3 @@
-
--- This code is used from Christian9's Gun mod
-
 bullet = {
 	{"halftest:bullet", "halftest:gun_bullet_entity"},
 }
