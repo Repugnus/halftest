@@ -21,9 +21,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'halftest:9mm_clip 1',
 	recipe = {
-		{"default:steel_ingot", "9mm_bullet", "default:steel_ingot"},
-		{"default:steel_ingot", "9mm_bullet", "default:steel_ingot"},
-		{"default:steel_ingot", "9mm_bullet", "default:steel_ingot"}
+		{"default:steel_ingot", "halftest:9mm_bullet", "default:steel_ingot"},
+		{"default:steel_ingot", "halftest:9mm_bullet", "default:steel_ingot"},
+		{"default:steel_ingot", "halftest:9mm_bullet", "default:steel_ingot"}
 	}
 })
 minetest.register_craft({
