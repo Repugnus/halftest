@@ -1,6 +1,7 @@
 dofile(minetest.get_modpath("halftest").."/bullets.lua")
 dofile(minetest.get_modpath("halftest").."/guns.lua")
 dofile(minetest.get_modpath("halftest").."/hud.lua")
+dofile(minetest.get_modpath("halftest").."/crafts.lua")
 minetest.register_tool("halftest:crowbar", {
 	description = "Crowbar",
 	inventory_image = "halftest_crowbar.png",
@@ -9,14 +10,6 @@ minetest.register_tool("halftest:crowbar", {
 		max_drop_level = 1,
 		damage_groups = {fleshy = 7}
 	}
-})
-minetest.register_craft({
-	output = "halftest:crowbar 1",
-	recipe = {
-			{"default:steel_ingot", "dye:red", ""},
-			{"dye:red", "default:steel_ingot", ""},
-			{"", "", "default:steel_ingot"}
-		}
 })
 minetest.register_tool("halftest:chestplate_hev", {
 	description = "Hev torso",
@@ -35,4 +28,16 @@ minetest.register_tool("halftest:boots_hev", {
 	inventory_image = "halftest_inv_boots_hev.png",
 	groups = {armor_feet=13.4,physics_jump=0.10,physics_speed=0.10, armor_heal=9, armor_use=50, radiation=100},
 	wear = 0,
+})
+minetest.register_craftitem("halftest:gun_barrel", {
+	description = "Gun Barrel",
+	inventory_image = "halftest_gun_barrel.png"
+})
+minetest.register_craftitem("halftest:gun_handle", {
+	description = "Gun Handle",
+	inventory_image = "halftest_gun_handle.png"
+})
+minetest.register_craftitem("halftest:gun_grip", {
+	description = "Gun Grip",
+	inventory_image = "halftest_gun_grip.png"
 })

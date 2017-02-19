@@ -156,32 +156,3 @@ end
 minetest.register_entity("halftest:9mm_bullet_entity", GUNS_9MM_BULLET_ENTITY)
 minetest.register_entity("halftest:smg1_bullet_entity", GUNS_SMG1_BULLET_ENTITY)
 minetest.register_entity("halftest:spas12_bullet_entity", GUNS_SPAS12_BULLET_ENTITY)
-
-minetest.register_craft({
-	output = 'halftest:bullet 16',
-	recipe = {
-		{'default:steel_ingot', 'default:gold_lump'},
-	}
-})
-minetest.register_craft({
-	output = 'halftest:smg1_bullet 16',
-	recipe = {
-		{'default:steel_ingot', 'default:gold_lump', 'default:steel_ingot'},
-	}
-})
-minetest.register_craft({
-	output = 'halftest:9mm_clip 1',
-	recipe = {
-		{"default:steel_ingot", "9mm_bullet", "default:steel_ingot"},
-		{"default:steel_ingot", "9mm_bullet", "default:steel_ingot"},
-		{"default:steel_ingot", "9mm_bullet", "default:steel_ingot"}
-	}
-})
-minetest.register_craft({
-	output = 'halftest:smg1_clip 1',
-	recipe = {
-		{"default:steel_ingot", "halftest:smg1_bullet", "default:steel_ingot"},
-		{"default:steel_ingot", "halftest:smg1_bullet", "default:steel_ingot"},
-		{"default:steel_ingot", "halftest:smg1_bullet", "default:steel_ingot"}
-	}
-})
