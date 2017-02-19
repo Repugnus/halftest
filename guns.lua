@@ -1,12 +1,12 @@
 bullet = {
-	{"halftest:bullet","halftest:smg1_bullet", "halftest:9mm_bullet_entity", "halftest:smg1_bullet_entity"},
+	{"halftest:bullet","halftest:smg1_bullet", "halftest:9mm_bullet_entity", "halftest:smg1_bullet_entity", "halftest:9mm_clip", "halftest:smg1_clip"},
 }
 
 local halftest_shoot_bullet = function(itemstack, player)
 	for _,bullet in ipairs(bullet) do
-		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[1] then
+		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[5] then
 			if not minetest.setting_getbool("creative_mode") then
-				player:get_inventory():remove_item("main", bullet[1])
+				player:get_inventory():remove_item("main", bullet[5])
 			end
 			local playerpos = player:getpos()
 			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[3])
@@ -26,9 +26,9 @@ end
 
 local halftest_shoot_bullets = function(itemstack, player)
 	for _,bullet in ipairs(bullet) do
-		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[2] then
+		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[6] then
 			if not minetest.setting_getbool("creative_mode") then
-				player:get_inventory():remove_item("main", bullet[2])
+				player:get_inventory():remove_item("main", bullet[6])
 			end
 			local playerpos = player:getpos()
 			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[4])
