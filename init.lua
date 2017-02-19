@@ -18,3 +18,21 @@ minetest.register_craft({
 			{"", "", "default:steel_ingot"}
 		}
 })
+minetest.register_tool("halftest:chestplate_hev", {
+	description = "Hev torso",
+	inventory_image = "halftest_inv_chestplate_hev.png",
+	groups = {armor_torso=17.4,physics_jump=0.10,physics_speed=0.10, armor_heal=9, armor_use=150},
+	wear = 0,
+})
+minetest.register_tool("halftest:leggings_hev", {
+	description = "Hev Leggings",
+	inventory_image = "halftest_inv_leggings_hev.png",
+	groups = {armor_legs=17.4,physics_jump=0.10,physics_speed=0.10, armor_heal=9, armor_use=150},
+	wear = 0,
+})
+minetest.register_tool("halftest:boots_hev", {
+	description = "Hev Boots",
+	inventory_image = "halftest_inv_boots_hev.png",
+	groups = {armor_feet=13.4,physics_jump=0.10,physics_speed=0.10, armor_heal=9, armor_use=150},
+	wear = 0,
+})
