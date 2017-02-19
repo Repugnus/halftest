@@ -66,7 +66,7 @@ local halftest_shoot_bullets = function(itemstack, player)
 	return false
 end
 
-minetest.register_tool("halftest:9mm", {
+minetest.register_craftitem("halftest:9mm", {
 	description = "9mm",
 	inventory_image = "halftest_9mm.png",
     stack_max = 1,
@@ -79,7 +79,7 @@ minetest.register_tool("halftest:9mm", {
 		return itemstack
 	end,
 })
-minetest.register_tool("halftest:smg1", {
+minetest.register_craftitem("halftest:smg1", {
 	description = "SMG1",
 	inventory_image = "halftest_smg1.png",
     stack_max = 1,

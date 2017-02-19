@@ -1,5 +1,6 @@
 dofile(minetest.get_modpath("halftest").."/bullets.lua")
 dofile(minetest.get_modpath("halftest").."/guns.lua")
+dofile(minetest.get_modpath("halftest").."/hud.lua")
 minetest.register_tool("halftest:crowbar", {
 	description = "Crowbar",
 	inventory_image = "halftest_crowbar.png",
