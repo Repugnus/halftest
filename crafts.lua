@@ -1,20 +1,20 @@
 minetest.register_craft({
 	output = 'halftest:bullet 16',
 	recipe = {
-		{'default:steel_ingot', 'tnt:gun_powder'},
+		{'default:steel_ingot', 'tnt:gunpowder'},
 	}
 })
 minetest.register_craft({
 	output = 'halftest:smg1_bullet 16',
 	recipe = {
-		{'default:steel_ingot', 'tnt:gun_powder', 'default:steel_ingot'},
+		{'default:steel_ingot', 'tnt:gunpowder', 'default:steel_ingot'},
 	}
 })
 minetest.register_craft({
 	output = "halftest:spas12_shell 16",
 	recipe = {
-		{"dye:red", "tnt:gun_powder", "dye:red"},
-		{"dye:red", "tnt:gun_powder", "dye:red"},
+		{"dye:red", "tnt:gunpowder", "dye:red"},
+		{"dye:red", "tnt:gunpowder", "dye:red"},
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
 	}
 })
