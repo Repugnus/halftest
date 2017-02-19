@@ -6,6 +6,14 @@ minetest.register_craftitem("halftest:smg1_bullet", {
 	description = "Smg1 Bullet",
 	inventory_image = "halftest_smg1_bullet.png",
 })
+minetest.register_craftitem("halftest:9mm_clip", {
+	description = "9mm Clip",
+	inventory_image = "halftest_9mm_clip.png",
+})
+minetest.register_craftitem("halftest:smg1_clip", {
+	description = "Smg1 Clip",
+	inventory_image = "halftest_smg1_clip.png",
+})
 local GUNS_9MM_BULLET_ENTITY={
 	physical = false,
 	timer=0,
@@ -34,7 +42,7 @@ GUNS_9MM_BULLET_ENTITY.on_step = function(self, dtime)
 		local objs = minetest.get_objects_inside_radius({x=pos.x,y=pos.y,z=pos.z}, 2)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
-				if obj:get_luaentity().name ~= "halftest:9mm_bullet_entity" and obj:get_luaentity().name ~= "__builtin:item" then
+				if obj:get_luaentity().name ~= "halftest:9mm_bullet_entity" and obj:get_luaentity().name ~= "__builtin:item" and obj.get:lua_entity().name ~= "singleplayer" then
 					local damage = 20
 					obj:punch(self.object, 1.0, {
 						full_punch_interval=1.0,
@@ -70,7 +78,7 @@ GUNS_SMG1_BULLET_ENTITY.on_step = function(self, dtime)
 		local objs = minetest.get_objects_inside_radius({x=pos.x,y=pos.y,z=pos.z}, 2)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
-				if obj:get_luaentity().name ~= "halftest:smg1_bullet_entity" and obj:get_luaentity().name ~= "__builtin:item" then
+				if obj:get_luaentity().name ~= "halftest:smg1_bullet_entity" and obj:get_luaentity().name ~= "__builtin:item" and obj:get_luaentity() ~= player then
 					local damage = 20
 					obj:punch(self.object, 1.0, {
 						full_punch_interval=1.0,

@@ -6,7 +6,7 @@ local halftest_shoot_bullet = function(itemstack, player)
 	for _,bullet in ipairs(bullet) do
 		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[1] then
 			if not minetest.setting_getbool("creative_mode") then
-				player:get_inventory():remove_item("main", arrow[1])
+				player:get_inventory():remove_item("main", bullet[1])
 			end
 			local playerpos = player:getpos()
 			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[3])
@@ -28,7 +28,7 @@ local halftest_shoot_bullets = function(itemstack, player)
 	for _,bullet in ipairs(bullet) do
 		if player:get_inventory():get_stack("main", player:get_wield_index()+1):get_name() == bullet[2] then
 			if not minetest.setting_getbool("creative_mode") then
-				player:get_inventory():remove_item("main", arrow[2])
+				player:get_inventory():remove_item("main", bullet[2])
 			end
 			local playerpos = player:getpos()
 			local obj = minetest.add_entity({x=playerpos.x,y=playerpos.y+1.5,z=playerpos.z}, bullet[4])
@@ -38,11 +38,11 @@ local halftest_shoot_bullets = function(itemstack, player)
 			obj:setvelocity({x=dir.x*19, y=dir.y*19, z=dir.z*19})
 			obj:setacceleration({x=dir.x, y=dir.y, z=dir.z})
 			obj:setyaw(player:get_look_yaw()+math.pi)
-			minetest.after(.1, function()
+			minetest.after(.001, function()
 				obj1:setvelocity({x=dir.x*19, y=dir.y*19, z=dir.z*19})
 				obj1:setacceleration({x=dir.x, y=dir.y, z=dir.z})
 				obj1:setyaw(player:get_look_yaw()+math.pi)
-				minetest.after(.1, function()
+				minetest.after(.001, function()
 					obj2:setvelocity({x=dir.x*19, y=dir.y*19, z=dir.z*19})
 					obj2:setacceleration({x=dir.x, y=dir.y, z=dir.z})
 					obj2:setyaw(player:get_look_yaw()+math.pi)
