@@ -102,10 +102,17 @@ local halftest_shoot_bullets1 = function(itemstack, player)
 	end
 	return false
 end
-minetest.register_craftitem("halftest:9mm", {
+minetest.register_node("halftest:9mm", {
 	description = "9mm",
+	drawtype = "mesh",
+	mesh = "gun.obj",
+	tiles = {name="default_steel_block.png"},
 	inventory_image = "halftest_9mm.png",
-    stack_max = 1,
+	on_place = function(itemstack, placer, pointed_thing)
+		if minetest.get_node(pointed_thing.under).name == "default:chest_locked" then
+			minetest.item_place(itemstack, placer, pointed_thing, param2)
+		end
+	end,
 	on_use = function(itemstack, user, pointed_thing)
 		if halftest_shoot_bullet(item, user, pointed_thing) then
 			if not minetest.setting_getbool("creative_mode") then
@@ -114,6 +121,7 @@ minetest.register_craftitem("halftest:9mm", {
 		end
 		return itemstack
 	end,
+	node_placement_prediction = "",
 })
 minetest.register_craftitem("halftest:smg1", {
 	description = "SMG1",
